@@ -56,13 +56,13 @@ save( codaSamples , file=paste0(fileNameRoot,"Mcmc.Rdata") )
 # Examine the chains:
 # Convergence diagnostics:
 diagMCMC( codaObject=codaSamples , parName="theta" )
-saveGraph( file=paste0(fileNameRoot,"ThetaDiag") , type="eps" )
+ saveGraph( file=paste0(fileNameRoot,"ThetaDiag") , type="png" )
 # Posterior descriptives:
 openGraph(height=3,width=4)
 par( mar=c(3.5,0.5,2.5,0.5) , mgp=c(2.25,0.7,0) )
 plotPost( codaSamples[,"theta"] , main="theta" , xlab=bquote(theta) )
-saveGraph( file=paste0(fileNameRoot,"ThetaPost") , type="eps" )
+  saveGraph( file=paste0(fileNameRoot,"ThetaPost") , type="png" )
 # Re-plot with different annotations:
 plotPost( codaSamples[,"theta"] , main="theta" , xlab=bquote(theta) , 
           cenTend="median" , compVal=0.5 , ROPE=c(0.45,0.55) , credMass=0.90 )
-saveGraph( file=paste0(fileNameRoot,"ThetaPost2") , type="eps" )
+  saveGraph( file=paste0(fileNameRoot,"ThetaPost2") , type="png" )
